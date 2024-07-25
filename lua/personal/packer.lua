@@ -42,7 +42,7 @@ return require('packer').startup(function(use)
 
 	use('nvim-lua/lsp-status.nvim'),
 
-	use('f-person/git-blame.nvim')
+	use('tveskag/nvim-blame-line'),
 
 }
 
