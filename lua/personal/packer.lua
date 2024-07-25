@@ -33,6 +33,17 @@ return require('packer').startup(function(use)
 
 	use 'm4xshen/autoclose.nvim',
 
+	use {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+	},
+
+	use('nvim-lua/lsp-status.nvim'),
+
+	use('f-person/git-blame.nvim')
+
 }
 
   end)
