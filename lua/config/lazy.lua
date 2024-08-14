@@ -21,6 +21,27 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+vim.g.mapleader = " "
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
+
+vim.opt.nu = true
+vim.opt.relativenumber = true
+
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+
+vim.opt.termguicolors = true
+
+vim.opt.scrolloff = 8
+vim.opt.signcolumn = "yes"
+
+vim.opt.smartcase = true
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
+vim.opt.tabstop = 2
+vim.opt.ruler = true
+
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
