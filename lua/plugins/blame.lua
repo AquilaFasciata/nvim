@@ -1,3 +1,3 @@
 return {
-	'tveskag/nvim-blame-line',
+	'braxtons12/blame_line.nvim',
 }

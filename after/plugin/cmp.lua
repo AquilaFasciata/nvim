@@ -1,11 +1,6 @@
 local cmp = require("cmp")
 
 cmp.setup({
-	snippet = {
-    expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body)
-    end,
-  },
   mapping = {
     ["<Enter>"] = cmp.mapping(function(fallback)
       -- This little snippet will confirm with tab, and if no entry is selected, will confirm the first item
@@ -22,8 +17,4 @@ cmp.setup({
 		["<C-j>"] = cmp.mapping.select_next_item(),
 		["<C-k>"] = cmp.mapping.select_prev_item(),
   },
-  sources = cmp.config.sources({
-    { name = "nvim_lsp" },
-    { name = "buffer" },
-  }),
 })
