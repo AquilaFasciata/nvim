@@ -26,6 +26,7 @@ cmp.setup({
     { name = "nvim_lsp" },
     { name = "buffer" },
 		{ name = "cmp-nvim-lsp-signature-help" },
+		{ name = 'luasnip', option = { show_autosnippets = true } },
   }),
 })
 
