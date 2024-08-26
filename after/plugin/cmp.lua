@@ -1,3 +1,4 @@
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 local cmp = require("cmp")
 
 cmp.setup({
@@ -35,3 +36,8 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require'lspconfig'.rust_analyzer.setup {
 	capabilities = capabilities,
 }
+
+cmp.event:on(
+'confirm_done',
+cmp_autopairs.on_confirm_done()
+)
