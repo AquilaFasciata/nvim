@@ -1,17 +1,21 @@
 local lsp_zero = require('lsp-zero')
 
-lsp_zero.on_attach(function(client, bufnr)
-  -- see :help lsp-zero-keybindings
-  -- to learn the available actions
+local lsp_attach = function(client, bufnr)
   lsp_zero.default_keymaps({buffer = bufnr})
-end)
+	lsp_zero.buffer_autoformat()
+end
+
+lsp_zero.extend_lspconfig({
+  lsp_attach = lsp_attach,
+})
+
 
 require("luasnip.loaders.from_vscode").lazy_load()
 require('mason').setup({})
 require('mason-lspconfig').setup({
   -- Replace the language servers listed here 
   -- with the ones you want to install
-  ensure_installed = {'ts_ls', 'rust_analyzer'},
+  ensure_installed = {'ts_ls', 'rust_analyzer', 'gopls'},
   handlers = {
     function(server_name)
       require('lspconfig')[server_name].setup({})
