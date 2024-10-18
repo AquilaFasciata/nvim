@@ -34,3 +34,6 @@ require('lspconfig').rust_analyzer.setup {
 require('lspconfig').gopls.setup {
 	capabilities = capabilities,
 }
+require('lspconfig').arduino_language_server.setup {
+	capabilities = capabilities,
+}
