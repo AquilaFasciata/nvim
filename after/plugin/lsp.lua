@@ -37,3 +37,6 @@ require('lspconfig').gopls.setup {
 require('lspconfig').arduino_language_server.setup {
 	capabilities = capabilities,
 }
+require('lspconfig').kotlin_language_server.setup {
+	capabilities = capabilities,
+}
