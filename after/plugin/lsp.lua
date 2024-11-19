@@ -20,28 +20,30 @@ require('mason-lspconfig').setup({
 	ensure_installed = { 'ts_ls', 'rust_analyzer', 'gopls' },
 	handlers = {
 		function(server_name)
-			require('lspconfig')[server_name].setup({})
+			require('lspconfig')[server_name].setup({
+				capabilities = capabilities
+			})
 		end,
 	},
 })
 
-require 'lspconfig'.cssls.setup {
-	capabilities = capabilities,
-}
-require('lspconfig').rust_analyzer.setup {
-	capabilities = capabilities,
-}
-require('lspconfig').gopls.setup {
-	capabilities = capabilities,
-}
-require('lspconfig').arduino_language_server.setup {
-	capabilities = capabilities,
-}
-require('lspconfig').kotlin_language_server.setup {
-	capabilities = capabilities,
-}
-require('lspconfig').clangd.setup {
-	capabilities = capabilities,
-}
+-- require 'lspconfig'.cssls.setup {
+-- 	capabilities = capabilities,
+-- }
+-- require('lspconfig').rust_analyzer.setup {
+-- 	capabilities = capabilities,
+-- }
+-- require('lspconfig').gopls.setup {
+-- 	capabilities = capabilities,
+-- }
+-- require('lspconfig').arduino_language_server.setup {
+-- 	capabilities = capabilities,
+-- }
+-- require('lspconfig').kotlin_language_server.setup {
+-- 	capabilities = capabilities,
+-- }
+-- require('lspconfig').clangd.setup {
+-- 	capabilities = capabilities,
+-- }
 
 require('fidget').setup()
