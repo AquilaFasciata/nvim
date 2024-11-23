@@ -42,8 +42,8 @@ require('mason-lspconfig').setup({
 -- require('lspconfig').kotlin_language_server.setup {
 -- 	capabilities = capabilities,
 -- }
--- require('lspconfig').clangd.setup {
--- 	capabilities = capabilities,
--- }
+require('lspconfig').vala_ls.setup {
+	capabilities = capabilities,
+}
 
 require('fidget').setup()
