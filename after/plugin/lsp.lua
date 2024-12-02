@@ -27,6 +27,10 @@ require('mason-lspconfig').setup({
 	},
 })
 
+require("mason-nvim-dap").setup({
+	handlers = {},
+})
+
 -- require 'lspconfig'.cssls.setup {
 -- 	capabilities = capabilities,
 -- }
