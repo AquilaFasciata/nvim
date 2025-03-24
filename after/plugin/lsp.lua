@@ -5,6 +5,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lsp_attach = function(client, bufnr)
 	lsp_zero.default_keymaps({ buffer = bufnr })
 	lsp_zero.buffer_autoformat()
+	vim.keymap.set('v', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
 end
 
 lsp_zero.extend_lspconfig({
@@ -26,6 +27,7 @@ require('mason-lspconfig').setup({
 		end,
 	},
 })
+
 
 require("mason-nvim-dap").setup({
 	handlers = {},
