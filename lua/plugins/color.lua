@@ -1,4 +1,5 @@
 return {
 	'mhartington/oceanic-next',
-	'folke/tokyonight.nvim'
+	'folke/tokyonight.nvim',
+	'Mofiqul/vscode.nvim'
 }

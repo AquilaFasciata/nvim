@@ -9,4 +9,4 @@ function SetMyColors(color)
 	vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#77a1dc" })
 end
 
-SetMyColors("tokyonight")
+SetMyColors("vscode")
