@@ -1,5 +1,5 @@
 return {
-	{ 'neovim/nvim-lspconfig' },
+	{ 'neovim/nvim-lspconfig', version = '^2.0.0'},
 	{ 'williamboman/mason.nvim' },
 	{ 'williamboman/mason-lspconfig.nvim' },
 	{
