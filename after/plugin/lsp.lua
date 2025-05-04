@@ -50,7 +50,7 @@ require('lspconfig').rust_analyzer.setup {
     ["rust-analyzer"] = {
       diagnostics = { enabled = true },
       cargo = { allFeatures = true }, -- Ensure full analysis
-      checkOnSave = { command = "clippy" },
+      checkOnSave = true,
     },
   },
   on_attach = function(client, bufnr)
