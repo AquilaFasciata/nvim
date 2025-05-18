@@ -44,29 +44,27 @@ require("mason-nvim-dap").setup({
 -- require 'lspconfig'.cssls.setup {
 -- 	capabilities = capabilities,
 -- }
-require('lspconfig').rust_analyzer.setup {
-  capabilities = capabilities,
-  settings = {
-    ["rust-analyzer"] = {
-      diagnostics = { enabled = true },
-      cargo = { allFeatures = true }, -- Ensure full analysis
-      checkOnSave = true,
-    },
-  },
-  on_attach = function(client, bufnr)
-    lsp_zero.default_keymaps({ buffer = bufnr })
-    lsp_zero.buffer_autoformat()
-    vim.keymap.set('v', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', { buffer = bufnr, noremap = true, silent = true })
-    -- Explicitly handle diagnostics
-    vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-      vim.lsp.diagnostic.on_publish_diagnostics, {
-        virtual_text = true,
-        underline = true,
-        signs = true,
-      }
-    )
-  end,
-}
+-- require('lspconfig').rust_analyzer.setup {
+--   capabilities = capabilities,
+--   settings = {
+--     ["rust-analyzer"] = {
+--       diagnostics = { enabled = true },
+--       cargo = { allFeatures = true }, -- Ensure full analysis
+--       checkOnSave = true,
+--     },
+--   },
+--   on_attach = function(client, bufnr)
+--     lsp_zero.buffer_autoformat()
+--     -- Explicitly handle diagnostics
+--     vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+--       vim.lsp.diagnostic.on_publish_diagnostics, {
+--         virtual_text = true,
+--         underline = true,
+--         signs = true,
+--       }
+--     )
+--   end,
+-- }
 -- require('lspconfig').gopls.setup {
 -- 	capabilities = capabilities,
 -- }
