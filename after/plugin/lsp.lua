@@ -1,4 +1,3 @@
-local lsp_zero = require('lsp-zero')
 -- ──────────────────────────────────────────────────────────────
 -- LSP setup (modern style — no lsp-zero, no deprecated lspconfig calls)
 -- ──────────────────────────────────────────────────────────────
@@ -77,10 +76,10 @@ require("mason-lspconfig").setup({
 
 -- Individual servers that are **not** managed by mason-lspconfig
 -- (or you want custom settings / you install them manually)
-require("lspconfig").vala_ls.setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
+-- require("lspconfig").vala_ls.setup({
+-- 	capabilities = capabilities,
+-- 	on_attach = on_attach,
+-- })
 
 -- Optional: keep fidget for LSP progress
 require("fidget").setup()
