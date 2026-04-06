@@ -6,11 +6,11 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- Shared on_attach (was lsp_attach)
 -- local on_attach = function(client, bufnr)
-	-- Default keymaps similar to what lsp-zero used to provide
-	local opts = { buffer = bufnr, noremap = true, silent = true }
+-- Default keymaps similar to what lsp-zero used to provide
+local opts = { buffer = bufnr, noremap = true, silent = true }
 
 
-	-- end
+-- end
 
 -- Global diagnostic configuration (unchanged)
 vim.diagnostic.config({
@@ -32,11 +32,11 @@ require("mason-lspconfig").setup({
 
 vim.api.nvim_create_autocmd('LspAttach', {
 	group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-	callback = function (args)
-			local client = vim.lsp.get_client_by_id(args.data.client_id)
-			if not client then return end
+	callback = function(args)
+		local client = vim.lsp.get_client_by_id(args.data.client_id)
+		if not client then return end
 
-			-- vim.notify("LSP attached: " .. client.name, vim.log.levels.INFO)
+		-- vim.notify("LSP attached: " .. client.name, vim.log.levels.INFO)
 
 		local bufnr = args.buf
 		local opts = { buffer = bufnr, noremap = true, silent = true }
@@ -52,7 +52,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 		vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 		vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
-		vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
+		vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
 
 
 		if client.supports_method("textDocument/formatting") then
