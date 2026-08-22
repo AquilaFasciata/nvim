@@ -13,8 +13,6 @@ vim.keymap.set("n", "<leader>ft", function()
 
 	FR_LASTFOLD = vim.o.foldlevel
 
-	vim.notify('Last fold: ' .. FR_LASTFOLD)
-
 	if FOLD_RESET_EXECUTED then
 		vim.o.foldlevel = FR_NEXTFOLD
 	else
