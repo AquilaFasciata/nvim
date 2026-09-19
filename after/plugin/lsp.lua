@@ -3,6 +3,9 @@
 -- ──────────────────────────────────────────────────────────────
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
+vim.lsp.config('*', {
+	capabilities = capabilities
+})
 
 -- Shared on_attach (was lsp_attach)
 -- local on_attach = function(client, bufnr)
@@ -72,9 +75,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- 	capabilities = capabilities,
 -- 	on_attach = on_attach,
 -- })
-
--- Optional: keep fidget for LSP progress
-require("fidget").setup()
 
 -- Optional: keep luasnip vscode loader (unrelated to LSP deprecation)
 require("luasnip.loaders.from_vscode").lazy_load()
