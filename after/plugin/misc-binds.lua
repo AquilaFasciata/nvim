@@ -5,6 +5,14 @@ vim.keymap.set("n", "<leader>fr", function()
 	vim.cmd.set({ args = { 'foldlevel=99' } })
 end, { desc = 'Reset fold level (Sets to 99)' })
 
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "qf",
+	callback = function()
+		-- Forces <CR> in normal mode to execute the built-in jump command
+		vim.keymap.set("n", "<CR>", "<CR>", { buffer = true, silent = true })
+	end,
+})
+
 vim.keymap.set("n", "<leader>ft", function()
 	if FOLD_RESET_EXECUTED == nil then
 		FOLD_RESET_EXECUTED = false
