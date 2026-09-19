@@ -5,6 +5,7 @@ vim.keymap.set("n", "<leader>fr", function()
 	vim.cmd.set({ args = { 'foldlevel=99' } })
 end, { desc = 'Reset fold level (Sets to 99)' })
 
+-- This fixes quickfix window and pressing enter
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "qf",
 	callback = function()
