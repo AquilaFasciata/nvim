@@ -30,7 +30,7 @@ vim.diagnostic.config({
 
 require("mason").setup({})
 require("mason-lspconfig").setup({
-	ensure_installed = { "ts_ls", "rust_analyzer", "gopls", "slint-lsp" },
+	ensure_installed = { "ts_ls", "rust_analyzer", "gopls", },
 })
 
 vim.api.nvim_create_autocmd('LspAttach', {
